@@ -2,7 +2,8 @@ $(document).ready(function(){
   $(".discogs-loading").show();
   $("#get-new-rekkid").hide();
   
-  var apiCall = "https://api.discogs.com/users/phebus/collection/folders/0/releases?callback=&sort=artist&sort_order=asc&per_page=500"
+  var user = 'dummy'
+  var apiCall = `https://api.discogs.com/users/${user}/collection/folders/0/releases?callback=&sort=artist&sort_order=asc&per_page=500`
   var urls = []
 
   for (var i = 1; i < 3; i++) {
