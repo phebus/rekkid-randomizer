@@ -28,27 +28,6 @@ const dreams = [
   "Wash the dishes"
 ]
 
-// const rekkids = function() {
-//   let newData = []
-//   var api_call = "https://api.discogs.com/users/phebus/collection/folders/0/releases?callback=&sort=artist&sort_order=asc&per_page=500"
-//   jQuery.getJSON(api_call, function(data) {
-//     var pages = data.pagination.pages
-
-//     for (var i = 2; i < pages + 1; i++) {
-//       jQuery.getJSON(api_call + `&page=${i}`, function(more) {
-//         newData = data.releases.concat(more.releases)
-//             console.log(newData)
-
-//       });
-//     }
-//   });
-//   return ;
-// }
-
-// app.get("/rekkids", (request, response) => {
-//   response.send(rekkids)
-// })
-
 app.get("/dreams", (request, response) => {
   response.send(dreams)
 })
