@@ -1,0 +1,39 @@
+<script type="text/javascript">
+$(document).ready(function(){
+  $(".discogs-loading").show();
+  jQuery.getJSON("https://api.discogs.com/users/phebus/collection/folders/0/releases?callback=&sort=added&sort_order=desc&per_page=1000", function(data) {
+    $(".discogs-loading").hide();
+    if (data.pagination.items > 1) {
+      $.each(data.releases, function(i,release){
+        content =
+        '<tr class="discogs-link" data-href="http://www.discogs.com/release/'+release.basic_information.id+'"><td>'+release.basic_information.artists[0].name+'</td><td>'+release.basic_information.title+'</td><td>'+release.basic_information.labels[0].name+'</td><td>'+release.basic_information.formats[0].descriptions[0]+'</td><td>'+release.basic_information.year+'</td></tr>';
+        $(content).appendTo("#discogs-collection");
+      });
+      $(".discogs-link").click(function() {
+        window.open($(this).data("href"));
+      });
+    }
+    else{
+      $("#discogs-collection").append("<tr class='discogs-error'><td>Error! Something is up with the Discogs API.</td></tr>");
+    }
+  });
+});
+</script>
+
+<h1>My Discogs Collection</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Artist</th>
+      <th>Title</th>
+      <th>Label</th>
+      <th>Format</th>
+      <th>Year</th>
+    </tr>
+  </thead>
+  <tbody id="discogs-collection">
+    <tr class="discogs-loading">
+    	<td>Loading ...</td>
+    </tr>
+  </tbody>
+</table>
