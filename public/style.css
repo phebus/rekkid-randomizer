@@ -29,11 +29,12 @@ p {
 table {
   border-collapse: collapse;
   vertical-align: middle;
+  font-family: monospace;
+
 }
 
-td, th, tr, thead {
-  padding: 0;
-  vertical-align: middle;
+th {
+  color: black;
 }
 
 form {

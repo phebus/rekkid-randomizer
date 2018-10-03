@@ -30,6 +30,10 @@ $(document).ready(function(){
       return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
     });
     
+    var tableHead = '<tr><th>Artist</th><th>Title</th></tr>';
+    
+    $(tableHead).appendTo("#discogs-collection");
+    
     $.each(rekkids, function(i,release){
       var info = release.basic_information
       var content = '<tr class="discogs-link" data-href="http://www.discogs.com/release/'+info.id+'"><td valign="center">'+info.artists[0].name+'</td><td>'+info.title+'</td><td>';
