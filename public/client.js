@@ -13,10 +13,6 @@ $(function() {
     })
   })
   
-  // $.get('/rekkids', function(rekkids) {
-  //   console.log(rekkids)
-  // })
-
   $('form').submit(function(event) {
     event.preventDefault()
     var dream = $('input').val()

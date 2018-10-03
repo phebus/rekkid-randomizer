@@ -16,11 +16,6 @@ app.get("/", (request, response) => {
   response.sendFile(__dirname + '/views/index.html')
 })
 
-// http://expressjs.com/en/starter/basic-routing.html
-app.get("/test", (request, response) => {
-  response.sendFile(__dirname + '/views/test.html')
-})
-
 // Simple in-memory store
 const dreams = [
   "Find and count some sheep",

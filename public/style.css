@@ -9,12 +9,13 @@
 }
 
 body {
-  font-family: helvetica, arial, sans-serif;
+  font-family: rockwell, arial, sans-serif;
 }
 
 h1 {
   font-weight: bold;
   color: green;
+  text-align: center;
 }
 
 .bold {
@@ -23,6 +24,16 @@ h1 {
 
 p {
   max-width: 600px;
+}
+
+table {
+  border-collapse: collapse;
+  vertical-align: middle;
+}
+
+td, th, tr, thead {
+  padding: 0;
+  vertical-align: middle;
 }
 
 form {
@@ -47,15 +58,19 @@ input {
 
 button {
   font-size: 16px;
-  border-radius: 3px;
-  background-color: lightgrey;
-  border: 1px solid grey;
-  box-shadow: 2px 2px teal;
+  margin: 4px 2px;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: green;
+  color: white;
+  text-align: center;
+  border: none;
+  display: inline-block;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: yellow;
+  background-color: #94c902;
 }
 
 button:active {
@@ -88,6 +103,11 @@ footer > a {
   color: coral;
   font-weight: bold;
 }
+
+.discogs-link:hover {
+  background-color: lightgreen;
+}
+
 
 #random-rekkid {
   color: red;
